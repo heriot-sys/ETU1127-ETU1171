@@ -32,7 +32,7 @@ create table  produit(
 );
 
 insert into produit(nom,image,idcategorie,prix,stock) values('Elseve Huile','Elseve huile.jpg',1,7000.0,40),('Maybeline make up','Maybelline NY makeup.jpg',1,8000.0,30)
-  ,('Boss botteled','boss botteled.jpg',10000.0,30),('Shampoing solide aux oeufs','shampoing oeuf.jpg',5000.0,20);
+  ,('Boss botteled','boss botteled.jpg',1,10000.0,30),('Shampoing solide aux oeufs','shampoing oeuf.jpg',1,5000.0,20);
 insert into produit(nom,image,idcategorie,prix,stock) values('Coca cola PM','coca cola.jpg',4,1000.0,50),('Jus Fanta GM','fanta.jpg',4,4000.0,50),('Nouilles Matsiro','matsiro.jpg',4,1000.0,50),
   ('La rizière carton','sac riz.jpg',4,12000.0,50);
 insert into produit(nom,image,idcategorie,prix,stock) values('Couche pampers','pampers.jpg',3,6000.0,20),('Attitude','attitude.jpg',3,8000.0,30),('Mustella','mustella.jpg',3,5000.0,30),
@@ -41,20 +41,24 @@ insert into produit(nom,image,idcategorie,prix,stock) values('Ballon de foot','f
   ('Ballon de volley mikasa','mikasa.jpg',2,8000.0,10);
 
 create table promotion(
-  idproduit int foreign key references produit(idproduit),
+  idproduit int,
+  foreign key(idproduit) references produit(idproduit),
   prixpromotion double precision
 );
 
 
 create table achat(
-  idcaisse int foreign key references caisse(idcaisse),
+  idcaisse int,
+  foreign key(idcaisse) references caisse(idcaisse),
   datedachat timestamp,
-  prixTotal double precision,
+  prixTotal double precision
 );
 
 create table detailsachat(
-  idachat int foreign key references achat(idachat),
-  idproduit int foreign key references produit(idproduit),
+  idachat int,
+  foreign key(idachat) references achat(idachat),
+  idproduit int,
+  foreign key(idproduit) references produit(idproduit),
   prixUnitaire double precision,
   quantite int,
   total double precision
