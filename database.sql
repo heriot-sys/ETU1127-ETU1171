@@ -24,11 +24,11 @@ create table  produit(
   idproduit int not null primary key AUTO_INCREMENT,
   nom varchar(250) unique,
   image varchar(100),
-  idcategorie int foreign key references categorie(idcategorie)
-  prix double precision,
+  idcategorie int,
+  FOREIGN KEY (idcategorie) REFERENCES categorie(idcategorie),
+  prix decimal,
   stock int,
-  check stock > 0,
-  ispromotion boolean default FALSE
+  ispromotion bool default FALSE
 );
 
 insert into produit(nom,image,idcategorie,prix,stock) values('Elseve Huile','Elseve huile.jpg',1,7000.0,40),('Maybeline make up','Maybelline NY makeup.jpg',1,8000.0,30)
