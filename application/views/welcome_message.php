@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!doctype html>
+?>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -8,15 +9,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- Style -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Login #2</title>
   </head>
@@ -31,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7">
             <h3>Login to <strong>Colorlib</strong></h3>
-            <p class="mb-4"> dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+            <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
             <form action="#" method="post">
               <div class="form-group first">
                 <label for="username">Username</label>
