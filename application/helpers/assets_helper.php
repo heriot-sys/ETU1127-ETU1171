@@ -15,4 +15,19 @@
       return site_url("assets/vendor/".$lien);
     }
   }
+
+  if( ! function_exists('fonts_url'))
+  {
+    function fonts_url($lien)
+    {
+      return site_url("assets/fonts/icomoon".$lien);
+    }
+  }
+  if( ! function_exists('image_url'))
+  {
+    function image_url($lien)
+    {
+      return site_url("assets/images/".$lien);
+    }
+  }
  ?>

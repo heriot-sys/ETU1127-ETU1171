@@ -1,7 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<!doctype html>
+<?php
+  /*$query = $this->db->query('Select nom,prix from produit');
+  foreach ($query->result_array() as $row) {
+    echo $row['nom'];
+    echo $row['prix'];
+  }*/
+ ?>
+ <!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -11,13 +18,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php echo fonts_url("owl.carousel.min.css")?>">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo css_url("bootstrap.min.css")?>">
 
     <!-- Style -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<?php echo css_url("style.css")?>">
 
     <title>Login #2</title>
   </head>
@@ -25,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
   <div class="d-lg-flex half">
-    <div class="bg order-1 order-md-2" style="background-image: url('images/su.jpg');"></div>
+    <div class="bg order-1 order-md-2" style="background-image: url('<?php echo image_url('su.jpg') ?>');"></div>
     <div class="contents order-2 order-md-1">
 
       <div class="container">
