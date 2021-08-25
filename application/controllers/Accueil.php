@@ -10,11 +10,6 @@ class Accueil extends CI_Controller {
 
 	public function index()
 	{
-		// $this->load->model('Caisse');
-		// $c=new Caisse();
-		// $c=$c->listeCaisse();
-		// $data=array();
-		// $data["caisse"]=$c;
 		$data['vue']='accueil.php';
 		$this->load->view('template',$data);
 	}	
@@ -22,6 +17,12 @@ class Accueil extends CI_Controller {
 	public function choix(){
 		$data['idcaisse']=$_GET['num'];
 		$data['vue']='Caisse.php';
+		$this->load->view('template',$data);
+	}
+
+	public function categorie(){
+		$data['idcategorie']=$_GET['id'];
+		$data['vue']='ListeCategorie.php';
 		$this->load->view('template',$data);
 	}
 

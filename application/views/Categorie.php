@@ -1,21 +1,6 @@
 <?php
-    $req = "Select * from caisse where idcaisse=".$idcaisse;
+    $req = "Select * from produit join categorie on produit.idcategorie=categorie.idcategorie where idcategorie=".$idcategorie;
     $query = $this->db->query($req); 
-    foreach ($query->result_array() as $row) {
-            $nomCaisse=$row['nom'];
-    }
-    $reqGetListeProduit = "Select * from produit";
-    $query2 = $this->db->query($reqGetListeProduit);
-    $listeCategorieProduit = array();
-    $indice = 0;
-    foreach($query2->result_array() as $row2){
-      // $listeCategorieProduit[$indice] = $row2['idcategorie'];
-      // $reqCategorie[$indice] = "Select nom from categorie join produit on produit.idcategorie=categorie.idcategorie where idcategorie=".$listeCategorieProduit[$indice];
-      $indice++;
-    }
-    // for($i=0;$i<$indice;$i++){
-    //   $query3 = $this->db->query($reqCategorie[$i]);
-    // }
     
 ?>
 <div class="container">

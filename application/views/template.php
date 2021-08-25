@@ -1,3 +1,8 @@
+<?php
+    $req = "Select * from categorie";
+    $query = $this->db->query($req); 
+    
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -102,8 +107,6 @@
 										<div class="nav-inner">	
 											<ul class="nav main-menu menu navbar-nav">
 													<li class="active"><a href="#">Home</a></li>
-													<li><a href="#">Ajout Achat </a></li>									
-													<li><a href="contact.html">Validation Achat</a></li>
 												</ul>
 										</div>
 									</div>
@@ -120,26 +123,22 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-2 col-md-2 col-12">
-						<!-- Logo -->
-						<div class="logo">
-							<a href="index.html"><img src="images/logo.png" alt="logo"></a>
-						</div>
-						<!--/ End Logo -->
+					
 						
 						<div class="mobile-nav"></div>
 					</div>
 					<div class="col-lg-8 col-md-7 col-12">
 						<div class="search-bar-top">
 							<div class="search-bar">
-								<select>
+								<form action="Accueil/categorie" method="GET">
+								<select name="id">
 									<option selected="selected">Categories</option>
-									<option>watch</option>
-									<option>mobile</option>
-									<option>kid’s item</option>
+									<div class="dropdown-menu">
+									<?php foreach ($query->result_array() as $row) { ?>
+										<a href="<?php echo $row['idcategorie'] ?>"><?php echo $row['nom'] ?></a>
+									<?php } ?>
+									</div>
 								</select>
-								<form>
-									<input name="search" placeholder="Search Products Here....." type="search">
-									<button class="btnn"><i class="ti-search"></i></button>
 								</form>
 							</div>
 						</div>
@@ -153,30 +152,9 @@
 	</header>
 	<!--/ End Header -->
 	
-	<!-- Slider Area -->
-	<section class="hero-slider">
-		<!-- Single Slider -->
-		<div class="single-slider">
-			<div class="container">
-				<div class="row no-gutters">
-					<div class="col-lg-9 offset-lg-3 col-12">
-						<div class="text-inner">
-							<div class="row">
-								<div class="col-lg-7 col-12">
-                  <?php include($vue); ?>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--/ End Single Slider -->
-	</section>
-	<!--/ End Slider Area -->
 	
 	
-	
+	<?php include($vue); ?>
 	
 	<!-- Start Footer Area -->
 	<footer class="footer">
