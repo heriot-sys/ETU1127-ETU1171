@@ -28,13 +28,13 @@
 
   <div class="col-lg-10">
     <br>
-    <form action="<?php echo site_url('Accueil/choix') ?>" method="POST">   
+    <form action="<?php echo site_url('Accueil/choix') ?>" method="GET">   
         <div class="form-group">
             <label for="caisse"><h3>Choisir une caisse</h3></label>
         </div>
         <?php for($i=0;$i<count($listeCaisse);$i++) { ?>
           <div class="btn-group btn-group-justified" role="group" aria-label="...">
-          <a href="Caisse.php?num=<?php echo $listeIdCaisse[$i] ?>" class="btn btn-outline-info btn-lg" title="<?php echo $listeCaisse[$i] ?>" role="button"><?php echo $listeCaisse[$i] ?></a>
+          <a href="Accueil/choix?num=<?php echo $listeIdCaisse[$i] ?>" class="btn btn-outline-info btn-lg" title="<?php echo $listeCaisse[$i] ?>" role="button"><?php echo $listeCaisse[$i] ?></a>
           </div> 
         <?php } ?>
         

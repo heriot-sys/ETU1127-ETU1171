@@ -20,9 +20,9 @@ class Accueil extends CI_Controller {
 	}	
 
 	public function choix(){
-		$caisse=$this->input->post("caisse1");
-		$this->session->set_userdata('idCaisse',$caisse);
-		redirect(site_url("Achat/saisie"));
+		$data['idcaisse']=$_GET['num'];
+		$data['vue']='Caisse.php';
+		$this->load->view('template',$data);
 	}
 
 	
