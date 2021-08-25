@@ -20,9 +20,8 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		//$this->load->model('produit');
-		//$categorie['cat'] = $this->produit->getCategorie();
-		$this->load->view('gestion_produit');
+		$this->load->view('welcome_message');
+		
 	}
 	public function log($id)
 	{
@@ -73,4 +72,5 @@ class Welcome extends CI_Controller {
 		}
 		echo $output;
 	}
+
 }
