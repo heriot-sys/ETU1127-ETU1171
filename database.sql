@@ -41,8 +41,10 @@ insert into produit(nom,image,idcategorie,prix,stock) values('Ballon de foot','f
   ('Ballon de volley mikasa','mikasa.jpg',2,8000.0,10);
 
 create table promotion(
+  idpromotion int not null primary key AUTO_INCREMENT,
   idproduit int,
   foreign key(idproduit) references produit(idproduit),
+  datedajout timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
   prixpromotion double precision
 );
 
@@ -63,3 +65,5 @@ create table detailsachat(
   quantite int,
   total double precision
 );
+
+create or replace view view_produit as select produit.nom,produit.image,categorie.nom,produit.prix,produit.stock from produit join categorie on categorie.idcategorie=produit.idcategorie;

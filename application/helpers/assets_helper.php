@@ -30,4 +30,11 @@
       return site_url("assets/images/".$lien);
     }
   }
+  if( ! function_exists('ajax_url'))
+  {
+    function ajax_url($lien)
+    {
+      return ajax_url("application/views/".$lien);
+    }
+  }
  ?>
